@@ -1,4 +1,4 @@
-Linux Investigation
+# Linux Investigation
 
 ## Linux Server Information
 
@@ -82,10 +82,9 @@ The Linux server could be hosted on **Amazon EC2, Azure Virtual Machines, or Goo
 
 ## Screenshots
 
-The terminal screenshots provide evidence of the Linux investigation:
+The following screenshots provide evidence of the Linux investigation:
 
-* Operating System: `cat /etc/os-release`
-* CPU Information: `lscpu`
-* Memory: `free -h`
-* Disk Space: `df -h`
-
+* Operating System: `linux-os.png`
+* CPU Information: `linux-cpu.png`
+* Memory: `linux-memory.png`
+* Disk Space: `linux-disk.png`
