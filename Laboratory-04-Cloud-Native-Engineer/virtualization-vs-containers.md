@@ -9,4 +9,4 @@
 
 ## Summary
 
-Containers can be a good option for web applications because they are lightweight and can start much faster than traditional Virtual Machines. They use fewer resources because containers share the host operating system. This can help applications run more efficiently and make deployment faster. For web applications that need quick setup and efficient resource usage, containers are worth considering.
+Containers can be a good option for web applications because they are lightweight and can start much faster than traditional Virtual Machines. They use fewer resources because containers share the host operating system. This can help applications run more efficiently and make deployment faster. For web applications that need quick setup and efficient resource usage, containers are worth considering. 
