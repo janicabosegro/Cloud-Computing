@@ -1,6 +1,6 @@
 # Virtualization vs. Containers
 
-| Category | Virtual Machines (VMs) | Containers |
+| **Category** | **Virtual Machines (VMs)** | **Containers** |
 |---|---|---|
 | Architecture | Each VM has its own Guest OS. | Containers share the Host OS. |
 | Boot Time | Usually takes minutes to boot. | Usually starts in seconds. |
