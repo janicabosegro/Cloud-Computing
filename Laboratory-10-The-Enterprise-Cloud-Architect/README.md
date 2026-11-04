@@ -53,3 +53,12 @@ The application uses a dedicated Docker network to connect the application and d
 ## Author
 Student Project – WBS101
 
+## Enterprise Cloud Architecture
+
+```mermaid
+flowchart TD
+    A[Windows Browser] -->|localhost:8080| B[Nextcloud Container]
+    B -->|enterprise-network| C[MariaDB Container]
+    B --> D[(nextcloud_data Volume)]
+    C --> E[(db_data Volume)]
+```
