@@ -1,64 +1,59 @@
-# Laboratory 10 – The Enterprise Cloud Architect
+# Laboratory Activity 10: Mission 10 – The Enterprise Cloud Architect
 
 ## Project Overview
-This project demonstrates a multi-tier enterprise cloud infrastructure using Ubuntu Server, Docker, Nextcloud, and MariaDB.
 
-The system provides a self-hosted cloud storage application with persistent data storage and database backup.
+This project demonstrates a multi-tier cloud infrastructure using Ubuntu Server, Docker, Nextcloud, and MariaDB. It includes persistent storage, database backup and recovery, automated health monitoring, firewall configuration, and technical documentation.
 
-## Technologies Used
+## Technology Stack
+
 - Ubuntu Server
 - Oracle VirtualBox
 - Docker
-- Docker Network
+- Docker Compose
 - Nextcloud
-- MariaDB
-- Docker Persistent Volumes
+- MariaDB 10.11
+- UFW Firewall
+- Bash and Cron
+- GitHub
 
-## System Architecture
-The application uses a multi-tier architecture:
+## Infrastructure Architecture
 
-1. **Application Tier:** Nextcloud provides the web-based cloud storage interface.
-2. **Database Tier:** MariaDB stores application data.
-3. **Storage Tier:** Docker volumes preserve database and Nextcloud files.
+The infrastructure consists of a Windows host machine running an Ubuntu Server virtual machine through Oracle VirtualBox. Docker runs the Nextcloud and MariaDB containers, which communicate through a Docker network.
 
-## Deployment Details
-- Docker Network: `enterprise-network`
-- Nextcloud Container: `nextcloud`
-- Database Container: `database`
-- Database Name: `nextcloud`
-- Application Port: `8080`
-- Browser Access: `http://localhost:8080`
+Persistent Docker volumes are used to retain application and database data.
 
-## Persistent Storage
-The project uses the following Docker volumes:
-- `db_data`
-- `nextcloud_data`
+## Deployment
 
-## Backup and Disaster Recovery
-A MariaDB database backup was created using `mariadb-dump`.
+The application stack consists of:
 
-The project also includes a planned Nextcloud file backup using compressed TAR archives.
+- **Nextcloud:** Web-based cloud storage application.
+- **MariaDB:** Database service for Nextcloud.
+- **Docker volumes:** Persistent application and database storage.
+- **Docker network:** Communication between application containers.
 
-## Security and Port Management
-The application uses a dedicated Docker network to connect the application and database containers. The database is not directly exposed through a host port.
+The running containers were initially deployed using Docker commands. A Docker Compose configuration was also created and successfully validated.
 
-## Project Status
-- Ubuntu Server deployment
-- Docker container deployment
-- Nextcloud and MariaDB integration
-- Persistent Docker volumes
-- Database backup
-- Additional automation, scheduling, and security configuration in progress.
+## Security Configuration
 
-## Author
-Student Project – WBS101
+UFW was enabled with the following allowed ports:
 
-## Enterprise Cloud Architecture
+- TCP 22 – SSH administration
+- TCP 8080 – Nextcloud web access
 
-```mermaid
-flowchart TD
-    A[Windows Browser] -->|localhost:8080| B[Nextcloud Container]
-    B -->|enterprise-network| C[MariaDB Container]
-    B --> D[(nextcloud_data Volume)]
-    C --> E[(db_data Volume)]
-```
+## Automation and Disaster Recovery
+
+A Bash health-check script monitors Docker container status. A cron job schedules the script to run every five minutes.
+
+A MariaDB database backup was created and restored into a separate test database named `recovery_test`. The restored database tables were verified successfully.
+
+## Project Evidence
+
+Screenshots of the infrastructure, running containers, Nextcloud dashboard, backup and recovery process, and firewall configuration are included in this repository.
+
+## Conclusion
+
+This project demonstrates practical cloud computing and system administration concepts, including containerization, persistent storage, security, automation, backup and recovery, and infrastructure documentation.
+
+## Video Demonstration
+
+Video recording link: **[Insert your Google Drive video link here]**
